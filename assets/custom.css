@@ -1,0 +1,44 @@
+body {
+    background-color: #f5f7fa;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+h1 {
+    color: #1976D2;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.dash-table-container .dash-spreadsheet-container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+/* Tabs styling */
+.tab {
+    border: 1px solid #1976D2 !important;
+    border-bottom: none !important;
+    background-color: #E3F2FD !important;
+    color: #1976D2 !important;
+    padding: 5px !important;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    margin-right: 5px;
+    margin-top: 6dvh;
+}
+
+.tab--selected {
+    background-color: #1976D2 !important;
+    color: white !important;
+    font-weight: bold;
+}
+
+#_dash-global-error-container > div > div.dash-debug-menu__outer.dash-debug-menu__outer--collapsed {
+    display: none;
+}
+
+.container {
+    width: 95dvw !important;
+    max-width: unset !important;
+}
