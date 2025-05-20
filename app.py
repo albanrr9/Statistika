@@ -64,7 +64,7 @@ if st.sidebar.checkbox("ℹ️ Shfaq përshkrimin e kolonave"):
 
 # ----- LOAD DATA -----
 if uploaded_file:
-    df = pd.read_excel(uploaded_file, sheet_name="Data")
+    df = pd.read_excel(uploaded_file, sheet_name=0, header=4)
 else:
     df = pd.read_excel("RealEstateSalesData.xlsx", sheet_name="Data")
 
@@ -160,7 +160,8 @@ elif tab == 'Tabela e Frekuencës së Shteteve':
     country_col = 'Country' if 'Country' in df.columns else df.columns[-1]
     freq = df[country_col].value_counts().reset_index()
     freq.columns = ['Shteti', 'Frekuenca Absolute']
-    freq['Frekuenca Relative'] = (freq['Frekuenca Absolute'] / freq['Frekuenca Absolute'].sum()).round(2)
+    freq['Frekuenca Relative'] = (freq['Frekuenca Absolute'] / freq['Frekuenca Absolute'].sum()).round(2) * 100
+    freq['Frekuenca Relative'] = freq['Frekuenca Relative'].astype(str) + '%'
     freq['Frekuenca Kumulative'] = freq['Frekuenca Absolute'].cumsum()
     st.dataframe(freq, use_container_width=True)
 
